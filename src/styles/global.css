@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", sans-serif;
+  --color-csc-pink: #ec1f8c;
+  --color-csc-coral: #ee5a4c;
+  --color-csc-peach: #f28865;
+  --color-csc-teal: #55a3a1;
+  --color-csc-cyan: #59c6cf;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.newsletter-card {
+  perspective: 1000px;
+}
+
+.newsletter-card__inner {
+  transform-style: preserve-3d;
+  transition: transform 600ms cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+.newsletter-card:hover .newsletter-card__inner,
+.newsletter-card:focus-visible .newsletter-card__inner {
+  transform: rotateY(180deg);
+}
+
+.newsletter-card__face {
+  backface-visibility: hidden;
+}
+
+.newsletter-card__back {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .newsletter-card__inner {
+    transition: none;
+  }
+}
+
+@media (min-width: 951px) {
+  html {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,42 @@
+local_backend: true
+
+# Replace this repository before enabling the CMS in production.
+backend:
+  name: github
+  repo: cornwall-self-catering-collective/website
+  branch: main
+
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
+
+site_url: https://cornwallselfcateringcollective.co.uk
+display_url: https://cornwallselfcateringcollective.co.uk
+logo_url: /assets/images/cornwall-self-catering-collective-logo.png
+
+collections:
+  - name: articles
+    label: Articles
+    label_singular: Article
+    folder: src/content/articles
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{order}}. {{title}}"
+    sortable_fields:
+      fields: [order, title, category]
+      default:
+        field: order
+        direction: ascending
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Category, name: category, widget: string }
+      - { label: Summary, name: excerpt, widget: text }
+      - label: Display order
+        name: order
+        widget: number
+        value_type: int
+        min: 1
+      - { label: Published, name: published, widget: boolean, default: true }
+      - { label: Article content, name: body, widget: markdown }

@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const title = "Articles | Cornwall Self-Catering Collective";
+const description = "News, ideas and updates from Cornwall Self-Catering Collective.";
+const articles = (await getCollection("articles", ({ data }) => data.published))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout {title} {description}>
+  <section class="bg-csc-cyan/20">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 sm:px-8 sm:py-20">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-csc-pink">Latest thinking</p>
+      <h1 class="text-4xl font-bold sm:text-5xl">Articles</h1>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-[1200px] px-6 py-16 sm:px-8 lg:py-20">
+    <div class="grid gap-7 md:grid-cols-3">
+      {
+        articles.map((article, index) => (
+          <article class="flex min-h-[320px] flex-col border-t-8 bg-white p-7 shadow-[0_12px_35px_rgba(0,0,0,0.09)] even:border-csc-peach odd:border-csc-pink md:nth-[3]:border-csc-teal">
+            <p class="mb-5 text-xs font-semibold uppercase tracking-[0.15em] text-black/55">
+              {article.data.category}
+            </p>
+            <h2 class="mb-5 text-2xl font-bold leading-snug">{article.data.title}</h2>
+            <p class="mb-8 leading-relaxed text-black/75">{article.data.excerpt}</p>
+            <p class="mt-auto text-sm font-semibold text-csc-pink">
+              Article {String(index + 1).padStart(2, "0")} · Coming soon
+            </p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

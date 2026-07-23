@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Contact us | Cornwall Self-Catering Collective";
+const description = "Contact Cornwall Self-Catering Collective or register your interest.";
+---
+
+<BaseLayout {title} {description}>
+  <section class="bg-csc-pink text-white">
+    <div class="mx-auto max-w-[1200px] px-6 py-16 sm:px-8 sm:py-20">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-white/80">Get in touch</p>
+      <h1 class="max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
+        We'd love to hear from you
+      </h1>
+    </div>
+  </section>
+
+  <section class="mx-auto grid max-w-[1200px] gap-12 px-6 py-16 sm:px-8 lg:grid-cols-[1fr_0.8fr] lg:py-20">
+    <div>
+      <h2 class="mb-5 text-3xl font-bold">Contact the Collective</h2>
+      <p class="mb-8 max-w-xl leading-relaxed">
+        Whether you represent a professional self-catering agency, work within
+        Cornwall's visitor economy or would simply like to learn more about our
+        work, please contact us by email.
+      </p>
+      <address class="not-italic">
+        <p class="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-black/55">
+          Email to register your interest
+        </p>
+        <a
+          class="break-words text-xl font-bold text-csc-pink underline decoration-2 underline-offset-4 hover:text-[#c91876] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-csc-pink sm:text-2xl"
+          href="mailto:hello@cornwallselfcateringcollective.co.uk"
+        >
+          hello@cornwallselfcatering<wbr>collective.co.uk
+        </a>
+      </address>
+    </div>
+
+    <aside class="bg-[#f7f7f4] p-8">
+      <h2 class="mb-4 text-2xl font-bold">Newsletter</h2>
+      <p class="mb-7 leading-relaxed">
+        Receive occasional updates, articles and news from the Collective.
+      </p>
+      <a
+        class="inline-block bg-csc-teal px-6 py-4 font-semibold text-white transition-colors hover:bg-[#3e8987] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-csc-teal"
+        href="https://confirmsubscription.com/h/y/75C5AEA408B8065D"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Sign up to our newsletter
+      </a>
+    </aside>
+  </section>
+</BaseLayout>

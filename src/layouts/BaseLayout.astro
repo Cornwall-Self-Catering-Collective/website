@@ -1,0 +1,110 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const currentPath = Astro.url.pathname;
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/about-us", label: "About us" },
+  { href: "/articles", label: "Articles" },
+  { href: "/contact-us", label: "Contact us" },
+];
+
+const isCurrent = (href: string) =>
+  href === "/" ? currentPath === href : currentPath.startsWith(href);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body class="m-0 flex min-h-screen flex-col bg-white font-sans text-[#171717] antialiased">
+    <header class="border-b border-black/10 bg-white">
+      <div class="mx-auto flex max-w-[1200px] flex-col gap-6 px-6 py-6 sm:px-8 lg:flex-row lg:items-center">
+        <a href="/" aria-label="Cornwall Self-Catering Collective home">
+          <img
+            class="h-auto w-[175px]"
+            src="/assets/images/cornwall-self-catering-collective-logo.png"
+            alt="Cornwall Self-Catering Collective"
+          />
+        </a>
+
+        <nav class="lg:ml-auto" aria-label="Main navigation">
+          <ul class="flex flex-wrap gap-x-4 sm:gap-x-7 gap-y-3 text-[0.9rem] font-semibold">
+            {
+              links.map((link) => (
+                <li>
+                  <a
+                    class:list={[
+                      "relative inline-block py-1 transition-colors hover:text-csc-pink focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-csc-pink",
+                      isCurrent(link.href) &&
+                        "text-csc-pink after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:bg-csc-pink",
+                    ]}
+                    href={link.href}
+                    aria-current={isCurrent(link.href) ? "page" : undefined}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="mt-auto">
+      <div class="mx-auto flex max-w-[1200px] flex-col gap-5 px-6 py-7 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <p class="text-sm text-black/60">
+          Cornwall Self-Catering Collective
+        </p>
+        <nav class="flex gap-4 sm:order-2" aria-label="Social media links">
+          <a
+            class="rounded-sm transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-csc-pink"
+            href="https://www.instagram.com/cornwallselfcateringcollective/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <img class="h-8 w-8" src="/assets/icons/instagram-icon.svg" alt="" />
+          </a>
+          <a
+            class="rounded-sm transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-csc-pink"
+            href="https://www.linkedin.com/company/cornwall-self-catering-collective"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <img class="h-8 w-8" src="/assets/icons/linkedin-icon.svg" alt="" />
+          </a>
+        </nav>
+      </div>
+      <div
+        class="h-24 bg-[linear-gradient(to_right,#ec1f8c_0%_30%,#ee5a4c_30%_35%,#f28865_35%_65%,#55a3a1_65%_70%,#59c6cf_70%_100%)]"
+        aria-hidden="true"
+      >
+      </div>
+    </footer>
+  </body>
+</html>
