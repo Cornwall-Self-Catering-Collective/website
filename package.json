@@ -7,13 +7,12 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "node ./node_modules/astro/astro.js dev",
-    "cms": "node ./node_modules/decap-server/dist/index.js",
-    "build": "node ./node_modules/astro/astro.js build",
-    "preview": "node ./node_modules/astro/astro.js preview"
+    "dev": "astro dev",
+    "cms": "decap-server",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
-    "@netlify/identity": "^1.2.0",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.3",
     "tailwindcss": "^4.1.11"
