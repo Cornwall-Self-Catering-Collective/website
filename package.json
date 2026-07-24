@@ -7,10 +7,10 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "cms": "decap-server",
-    "build": "astro build",
-    "preview": "astro preview"
+    "dev": "node ./node_modules/astro/astro.js dev",
+    "cms": "node ./node_modules/decap-server/dist/index.js",
+    "build": "node ./node_modules/astro/astro.js build",
+    "preview": "node ./node_modules/astro/astro.js preview"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.5",

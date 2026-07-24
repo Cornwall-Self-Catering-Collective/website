@@ -24,11 +24,7 @@ collections:
     format: frontmatter
     slug: "{{slug}}"
     summary: "{{order}}. {{title}}"
-    sortable_fields:
-      fields: [order, title, category]
-      default:
-        field: order
-        direction: ascending
+    sortable_fields: [order, title, category]
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Category, name: category, widget: string }

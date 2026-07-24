@@ -7,5 +7,8 @@ export default defineConfig({
   adapter: cloudflare(),
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      noDiscovery: true,
+    },
   },
 });
