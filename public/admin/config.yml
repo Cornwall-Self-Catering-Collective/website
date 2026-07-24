@@ -5,6 +5,7 @@ backend:
   name: github
   repo: cornwall-self-catering-collective/website
   branch: main
+  sitedomain: cornwall-self-catering-collective.netlify.app/
 
 media_folder: public/assets/uploads
 public_folder: /assets/uploads
