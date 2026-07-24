@@ -13,7 +13,6 @@
     "preview": "node ./node_modules/astro/astro.js preview"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.5",
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.3",
     "tailwindcss": "^4.1.11"

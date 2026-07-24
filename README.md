@@ -21,6 +21,7 @@ This starter does not use `wrangler.jsonc`.
 ## Included Shape
 
 - edit site code under `app/`
+- `astro.config.mjs` is configured for static output (`output: "static"`)
 - `.openai/hosting.json` declares optional Sites D1 and R2 bindings
 - `vite.config.ts` simulates declared bindings for local development
 - `db/schema.ts` starts intentionally empty
