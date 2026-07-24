@@ -8,7 +8,7 @@ published: true
 ---
 ![](/assets/uploads/sunsetcottage.png)
 
-Cornwall is not only a summer destination. Each season offers something different.
+Cornwall is not only a summer destination. Each season offers something different. Very different.
 
 Spring brings colour and longer days. Autumn offers quieter coast paths and dramatic landscapes. Winter is made for storm watching, good food and time together.
 
