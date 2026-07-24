@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Page not found | Cornwall Self-Catering Collective";
+const description =
+  "The page you were looking for could not be found. Return to the Cornwall Self-Catering Collective homepage.";
+---
+
+<BaseLayout {title} {description}>
+  <section class="relative isolate overflow-hidden bg-[#f7f4f1]" aria-labelledby="not-found-heading">
+    <div
+      class="absolute inset-x-0 top-0 h-3 bg-[linear-gradient(to_right,#ec1f8c_0%_30%,#ee5a4c_30%_35%,#f28865_35%_65%,#55a3a1_65%_70%,#59c6cf_70%_100%)]"
+      aria-hidden="true"
+    ></div>
+    <div class="mx-auto flex min-h-[460px] max-w-[1200px] items-center px-6 py-20 sm:px-8 sm:py-24">
+      <div class="max-w-2xl">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-csc-pink">
+          Error 404
+        </p>
+        <h1 id="not-found-heading" class="mb-6 text-4xl font-bold leading-tight sm:text-5xl">
+          We can’t find that page.
+        </h1>
+        <p class="max-w-xl text-lg leading-relaxed text-black/70">
+          It may have moved, been removed, or the address may not be quite right.
+          Let’s get you back on track.
+        </p>
+        <a
+          class="mt-9 inline-flex items-center rounded-sm bg-csc-pink px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#c81770] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-csc-pink"
+          href="/"
+        >
+          Back to the homepage
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
