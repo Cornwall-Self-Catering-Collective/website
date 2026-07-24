@@ -1,111 +1,146 @@
-# vinext-starter
+# Cornwall Self-Catering Collective website
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+The public website for the Cornwall Self-Catering Collective. It is a static
+[Astro](https://astro.build/) site styled with Tailwind CSS, with articles
+managed as Markdown files through [Decap CMS](https://decapcms.org/).
 
-## Prerequisites
+The live site is [cornwallselfcateringcollective.co.uk](https://cornwallselfcateringcollective.co.uk/).
 
-- Node.js `>=22.13.0`
+## Useful links
 
-## Quick Start
+- **Live site:** [cornwallselfcateringcollective.co.uk](https://cornwallselfcateringcollective.co.uk/)
+- **Content admin:** [cornwallselfcateringcollective.co.uk/admin/](https://cornwallselfcateringcollective.co.uk/admin/)
+- **Source repository:** [Cornwall-Self-Catering-Collective/website](https://github.com/Cornwall-Self-Catering-Collective/website)
+- **GitHub organisation:** [Cornwall-Self-Catering-Collective](https://github.com/Cornwall-Self-Catering-Collective)
+
+The admin URL is served by the site, but publishing edits from it also requires
+the GitHub CMS authentication setup described below.
+
+## Local setup
+
+### Requirements
+
+- [Node.js](https://nodejs.org/) `22.13.0` or newer
+- [pnpm](https://pnpm.io/), enabled with Corepack
+- Git access to the repository if you will edit or publish content
+
+Install and activate pnpm once if it is not already available:
 
 ```bash
-npm install
-npm run dev
-npm run build
+corepack enable
+corepack prepare pnpm@latest --activate
 ```
 
-This starter does not use `wrangler.jsonc`.
+Then clone the repository and install its dependencies. Astro is listed in the
+project dependencies, so `pnpm install` installs the correct project version;
+do not install Astro globally.
 
-## Included Shape
-
-- edit site code under `app/`
-- `astro.config.mjs` is configured for static output (`output: "static"`)
-- `.openai/hosting.json` declares optional Sites D1 and R2 bindings
-- `vite.config.ts` simulates declared bindings for local development
-- `db/schema.ts` starts intentionally empty
-- `examples/d1/` contains an optional D1 example surface
-- `drizzle.config.ts` supports local migration generation when needed
-
-## Workspace Auth Headers
-
-OpenAI workspace sites can read the current user's email from
-`oai-authenticated-user-email`.
-
-SIWC-authenticated workspace sites may also receive
-`oai-authenticated-user-full-name` when the user's SIWC profile has a non-empty
-`name` claim. The full-name value is percent-encoded UTF-8 and is accompanied by
-`oai-authenticated-user-full-name-encoding: percent-encoded-utf-8`.
-
-Treat the full name as optional and fall back to email when it is absent:
-
-```tsx
-import { headers } from "next/headers";
-
-export default async function Home() {
-  const requestHeaders = await headers();
-  const email = requestHeaders.get("oai-authenticated-user-email");
-  const encodedFullName = requestHeaders.get("oai-authenticated-user-full-name");
-  const fullName =
-    encodedFullName &&
-    requestHeaders.get("oai-authenticated-user-full-name-encoding") ===
-      "percent-encoded-utf-8"
-      ? decodeURIComponent(encodedFullName)
-      : null;
-
-  const displayName = fullName ?? email;
-  // ...
-}
+```bash
+git clone git@github.com:Cornwall-Self-Catering-Collective/website.git
+cd website
+pnpm install
 ```
 
-## Optional Dispatch-Owned ChatGPT Sign-In
+Run the local site:
 
-Import the ready-to-use helpers from `app/chatgpt-auth.ts` when the site needs
-optional or required ChatGPT sign-in:
+```bash
+pnpm dev
+```
 
-- Use `getChatGPTUser()` for optional signed-in UI.
-- Use `requireChatGPTUser(returnTo)` for server-rendered pages that should send
-  anonymous visitors through Sign in with ChatGPT.
-- Use `chatGPTSignInPath(returnTo)` and `chatGPTSignOutPath(returnTo)` for
-  browser links or actions.
-- Pass a same-origin relative `returnTo` path for the destination after sign-in
-  or sign-out. The helper validates and safely encodes it.
-- Mark protected pages with `export const dynamic = "force-dynamic"` because
-  they depend on per-request identity headers.
+Astro prints the local URL, normally `http://localhost:4321`. Build and preview
+the production output with:
 
-Dispatch owns `/signin-with-chatgpt`, `/signout-with-chatgpt`, `/callback`, the
-OAuth cookies, and identity header injection. Do not implement app routes for
-those reserved paths. Routes that do not import and call the helper remain
-anonymous-compatible.
+```bash
+pnpm build
+pnpm preview
+```
 
-SIWC establishes identity only; it does not prove workspace membership. Use the
-Sites hosting platform's access policy controls for workspace-wide restrictions,
-or enforce explicit server-side membership or allowlist checks.
+Use pnpm for dependency changes so `pnpm-lock.yaml` remains the authoritative
+lockfile. There are no application environment variables required for the
+static site itself.
 
-Use SIWC for account pages, user-specific dashboards, saved records, and write
-actions tied to the current ChatGPT user. Leave public content anonymous.
+## Day-to-day maintenance
 
-## Useful Commands
+- Page routes are in `src/pages/`.
+- The shared header, footer and base markup are in `src/layouts/BaseLayout.astro`.
+- Global styling is in `src/styles/global.css`; Tailwind is configured in
+  `astro.config.mjs`.
+- Static images and other public files are in `public/`.
+- Article images uploaded through the CMS go in `public/assets/uploads/`.
 
-- `npm run dev`: start local development
-- `npm run cms`: start Decap's local editing service, then visit `/admin/` while
-  the development site is running
-- `npm run build`: verify the vinext build output
-- `npm test`: build the starter and verify its rendered loading skeleton
-- `npm run db:generate`: generate Drizzle migrations after schema changes
+Run `pnpm build` before opening a pull request or publishing manual changes.
 
-## Learn More
+## Articles and the admin
 
-- [vinext Documentation](https://github.com/cloudflare/vinext)
-- [Drizzle D1 Guide](https://orm.drizzle.team/docs/get-started/d1-new)
+Articles are Markdown files in `src/content/articles/`. Their required front
+matter is defined in `src/content.config.ts` and includes:
 
-## Content management
+```yaml
+title: Article title
+category: Collective news
+excerpt: A short summary used on the articles page.
+order: 1
+published: true
+```
 
-Articles live in `src/content/articles` and are managed through Decap CMS at
-`/admin/`. For local editing, run `npm run dev` and `npm run cms` in separate
-terminals.
+`order` must be a positive whole number and controls the displayed order.
+Set `published: false` to keep an article out of the public articles listing.
 
-Before using the CMS on the live site, update `backend.repo` in
-`public/admin/config.yml` to the GitHub repository that deploys the site and
-configure a Decap-compatible GitHub OAuth provider.
+### Editing locally
+
+Start both services in separate terminals:
+
+```bash
+pnpm dev
+```
+
+```bash
+pnpm cms
+```
+
+Then open `http://localhost:4321/admin/`. Decap's local backend saves changes
+to your working copy. Review the generated Markdown, test the site and commit
+the changes as usual.
+
+### Editing on the live site
+
+The live admin loads Decap CMS at `/admin/` and is configured to write to the
+`main` branch of `Cornwall-Self-Catering-Collective/website`. Saved changes
+create commits in GitHub, so the hosting service must build and deploy updates
+from that branch.
+
+The repository contains the CMS configuration in `public/admin/config.yml`, but
+does **not** contain a production GitHub OAuth service. 
+
+Keep the following values aligned if the repository, branch or domain changes:
+
+- `backend.repo` and `backend.branch` in `public/admin/config.yml`
+- `site_url` and `display_url` in `public/admin/config.yml`
+- the hosting provider's repository, branch and custom-domain settings
+- the OAuth application's callback URL and allowed origins
+
+## Adding editors
+
+The practical access model is GitHub access: a person must be able to authorise
+with GitHub and have write access to this repository.
+
+1. Invite them to the `Cornwall-Self-Catering-Collective` GitHub organisation,
+   or add them as a collaborator on the `website` repository.
+2. Grant the least privilege that allows content commits (normally the
+   repository's **Write** role).
+3. Ensure the GitHub OAuth application used by Decap permits the person and the
+   organisation. Organisation security policies may require an owner to approve
+   the app.
+4. Ask the editor to sign in at the live admin URL and create a draft article as
+   a smoke test.
+
+Removing their GitHub repository access also removes their ability to publish
+through Decap. GitHub organisation owners and the OAuth application credentials
+remain sensitive administrative access and should be limited to trusted
+maintainers.
+
+## Deployment and recovery notes
+
+This repository is configured for static Astro output. Its deployment provider
+and GitHub OAuth bridge are external to the repository, so retain access to both
+their dashboards alongside GitHub organisation ownership.
