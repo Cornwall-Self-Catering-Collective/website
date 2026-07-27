@@ -15,6 +15,36 @@ display_url: https://cornwallselfcateringcollective.co.uk
 logo_url: /assets/images/cornwall-self-catering-collective-logo.png
 
 collections:
+  - name: pages
+    label: Pages
+    files:
+      - label: Homepage
+        name: homepage
+        file: src/content/homepage/index.md
+        fields:
+          - { label: Page title, name: pageTitle, widget: string }
+          - { label: SEO description, name: seoDescription, widget: text }
+          - { label: Hero eyebrow, name: heroEyebrow, widget: string }
+          - { label: Hero heading, name: heroHeading, widget: string }
+          - { label: Mission eyebrow, name: missionEyebrow, widget: string }
+          - { label: Mission heading, name: missionHeading, widget: string }
+          - { label: Mission paragraph one, name: missionParagraphOne, widget: text }
+          - { label: Mission paragraph two, name: missionParagraphTwo, widget: text }
+      - label: About us
+        name: about
+        file: src/content/about/index.md
+        fields:
+          - { label: Page title, name: pageTitle, widget: string }
+          - { label: SEO description, name: seoDescription, widget: text }
+          - { label: Hero eyebrow, name: heroEyebrow, widget: string }
+          - { label: Hero heading, name: heroHeading, widget: string }
+          - { label: Intro paragraph one, name: introParagraphOne, widget: text }
+          - { label: Intro paragraph two, name: introParagraphTwo, widget: text }
+          - { label: Stand for heading, name: standForHeading, widget: string }
+          - label: Stand for items
+            name: standForItems
+            widget: list
+            field: { label: Item, name: item, widget: string }
   - name: articles
     label: Articles
     label_singular: Article

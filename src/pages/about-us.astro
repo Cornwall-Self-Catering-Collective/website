@@ -1,46 +1,41 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEntry } from "astro:content";
 
-const title = "About us | Cornwall Self-Catering Collective";
-const description =
-  "Learn more about the Cornwall Self-Catering Collective and our work for Cornwall's professional self-catering sector.";
+const about = await getEntry("about", "index");
+
+if (!about) {
+  throw new Error("Missing about page content entry at src/content/about/index.md");
+}
+
+const { data } = about;
+const title = data.pageTitle;
+const description = data.seoDescription;
 ---
 
 <BaseLayout {title} {description}>
   <section class="bg-csc-peach/20">
     <div class="mx-auto max-w-[1200px] px-6 py-16 sm:px-8 sm:py-20">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-csc-pink">About us</p>
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-csc-pink">{data.heroEyebrow}</p>
       <h1 class="max-w-3xl text-4xl font-bold leading-tight sm:text-5xl">
-        A collective voice for responsible self-catering
+        {data.heroHeading}
       </h1>
     </div>
   </section>
 
   <section class="mx-auto grid max-w-[1200px] gap-12 px-6 py-16 sm:px-8 lg:grid-cols-[1.3fr_0.7fr] lg:py-20">
     <div class="space-y-6 text-[1.05rem] leading-relaxed">
-      <p>
-        Cornwall Self-Catering Collective brings together professional holiday
-        letting agencies that share a commitment to quality, responsible
-        management and a positive future for Cornwall. By combining the
-        knowledge and experience of our members, we provide a clear,
-        constructive voice on the issues affecting local businesses, property
-        owners, guests and the communities that welcome them.
-      </p>
-      <p>
-        Our work goes beyond promoting high standards. We encourage thoughtful
-        tourism, share practical expertise and build relationships across the
-        visitor economy so that self-catering accommodation continues to make a
-        valuable contribution to Cornwall's employment, culture and year-round
-        prosperity.
-      </p>
+      <p>{data.introParagraphOne}</p>
+      <p>{data.introParagraphTwo}</p>
     </div>
     <aside class="border-l-4 border-csc-cyan bg-[#f4fbfb] p-8">
-      <h2 class="mb-4 text-2xl font-bold">What we stand for</h2>
+      <h2 class="mb-4 text-2xl font-bold">{data.standForHeading}</h2>
       <ul class="space-y-3 leading-relaxed">
-        <li>Professional standards</li>
-        <li>Responsible tourism</li>
-        <li>Strong local communities</li>
-        <li>A sustainable visitor economy</li>
+        {
+          data.standForItems.map((item) => (
+            <li>{item}</li>
+          ))
+        }
       </ul>
     </aside>
   </section>

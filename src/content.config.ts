@@ -12,4 +12,32 @@ const articles = defineCollection({
   }),
 });
 
-export const collections = { articles };
+const homepage = defineCollection({
+  loader: glob({ pattern: "index.md", base: "./src/content/homepage" }),
+  schema: z.object({
+    pageTitle: z.string(),
+    seoDescription: z.string(),
+    heroEyebrow: z.string(),
+    heroHeading: z.string(),
+    missionEyebrow: z.string(),
+    missionHeading: z.string(),
+    missionParagraphOne: z.string(),
+    missionParagraphTwo: z.string(),
+  }),
+});
+
+const about = defineCollection({
+  loader: glob({ pattern: "index.md", base: "./src/content/about" }),
+  schema: z.object({
+    pageTitle: z.string(),
+    seoDescription: z.string(),
+    heroEyebrow: z.string(),
+    heroHeading: z.string(),
+    introParagraphOne: z.string(),
+    introParagraphTwo: z.string(),
+    standForHeading: z.string(),
+    standForItems: z.array(z.string()).min(1),
+  }),
+});
+
+export const collections = { articles, homepage, about };

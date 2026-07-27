@@ -67,6 +67,10 @@ static site itself.
   `astro.config.mjs`.
 - Static images and other public files are in `public/`.
 - Article images uploaded through the CMS go in `public/assets/uploads/`.
+- Reusable editable page copy uses one-entry content collections:
+   - Homepage copy in `src/content/homepage/index.md`
+   - About page copy in `src/content/about/index.md`
+   - Matching CMS fields in `public/admin/config.yml` under `collections: pages`
 
 Run `pnpm build` before opening a pull request or publishing manual changes.
 

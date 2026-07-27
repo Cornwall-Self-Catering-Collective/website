@@ -1,10 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEntry } from "astro:content";
 
-const title =
-  "Cornwall Self-Catering Collective | Professional Body for Holiday Rental Agencies";
-const description =
-  "The professional body representing short-term, self-catering accommodation agencies across Cornwall.";
+const homepage = await getEntry("homepage", "index");
+
+if (!homepage) {
+  throw new Error("Missing homepage content entry at src/content/homepage/index.md");
+}
+
+const { data } = homepage;
+const title = data.pageTitle;
+const description = data.seoDescription;
 ---
 
 <BaseLayout {title} {description}>
@@ -20,10 +26,10 @@ const description =
     <div class="absolute inset-0 -z-10 bg-gradient-to-t from-black/65 via-black/10 to-transparent"></div>
     <div class="mx-auto w-full max-w-[1200px] px-6 pb-12 sm:px-8 sm:pb-16">
       <p class="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-white/90">
-        One voice for self-catering in Cornwall
+        {data.heroEyebrow}
       </p>
       <h1 id="hero-heading" class="max-w-3xl text-4xl font-bold leading-tight text-white sm:text-5xl">
-        Welcome to Cornwall Self-Catering Collective
+        {data.heroHeading}
       </h1>
     </div>
   </section>
@@ -31,21 +37,13 @@ const description =
   <section class="mx-auto grid max-w-[1200px] gap-12 px-6 py-16 sm:px-8 lg:grid-cols-[1fr_420px] lg:items-center lg:py-20">
     <div class="max-w-2xl">
       <p class="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-csc-pink">
-        Our mission
+        {data.missionEyebrow}
       </p>
       <h2 class="mb-6 text-3xl font-bold leading-tight">
-        Working together for a thriving visitor economy
+        {data.missionHeading}
       </h2>
-      <p class="mb-5 leading-relaxed">
-        The Cornwall Self-Catering Collective (CSC) is the professional body
-        representing short-term, self-catering accommodation agencies across
-        Cornwall.
-      </p>
-      <p class="leading-relaxed">
-        We champion excellence, protect our members' interests, and support the
-        long-term wellbeing of Cornwall's communities, places, and visitor
-        economy, for one and all.
-      </p>
+      <p class="mb-5 leading-relaxed">{data.missionParagraphOne}</p>
+      <p class="leading-relaxed">{data.missionParagraphTwo}</p>
     </div>
 
     <a
