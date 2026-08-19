@@ -1,8 +1,9 @@
 ---
 title: Why collaboration matters for Cornwall
 category: Collective news
-excerpt: A look at how shared knowledge and a unified professional voice can
-  support businesses, residents and visitors across the county.
+excerpt: "Discover how collaboration, local recommendations, and shared
+  expertise can enhance every visitor's experience while supporting local
+  businesses and communities across the county. "
 order: 1
 published: true
 ---
