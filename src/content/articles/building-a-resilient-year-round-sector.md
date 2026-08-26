@@ -22,27 +22,27 @@ Encouraging a streaky flow of year-round visitors from beyond the Tamar directly
 
 ## **Ways to encourage off-season visits**
 
-By promoting the wonders of our county beyond the summer months, you can help create a better, more stable future for Cornwall. 
+By promoting the wonders of our county beyond the summer months, you can help create a better, more stable future for Cornwall.
 
-### **Collaboration with local businesses** 
+### **Collaboration with local businesses**
 
 ![](/assets/uploads/istock-2080688234.jpg)
 
 Teaming up with local restaurants, cosy pubs, or family attractions to offer discounts or package deals outside peak months can greatly encourage return visits. Not only does the visitor spending stay within Cornwall's economy, but this authentic Cornish experience could persuade tourists who usually visit in the summer to return beyond peak season, spreading visitor numbers more evenly throughout the year.
 
-### **Provide local guides for visiting off season** 
+### **Provide local guides for visiting off season**
 
 ![](/assets/uploads/istock-533668661.jpg)
 
 Creating local guides about visiting beyond summer for existing guests can encourage return bookings. Not only does this generate a more stable income for you as an accommodation provider, but it enables people to appreciate the beauty of Cornwall in seasons that do not often get recognised. With better promotion of Cornish events throughout the year, such as the Global Pasty Championships in February, the Porthleven Food Festival in April, and the festive Mousehold lights in November, tourists will be encouraged to experience authentic local events they may have otherwise been unaware of. 
 
-### **Friendly greetings and conversation** 
+### **Friendly greetings and conversation**
 
 ![](/assets/uploads/istock-2218758177.jpg)
 
 Market the experience each season offers through friendly conversations with guests. Personalising guests' experiences is what makes their visit valuable, encouraging return visits year upon year. By providing them with local insight and access to resources they may not have otherwise discovered, you ensure tourists can explore Cornwall at their own pace in the crisp autumn air, from a vibrant, cosy local pub in winter months, or on cycling adventures watching the flowers bloom in spring. Simply projecting your love for Cornwall in every season, and sharing local tips, can be enough to encourage off-season visits. 
 
-### **Promote workcations** 
+### **Promote workcations**
 
 ![](/assets/uploads/istock-1064264536.jpg)
 
