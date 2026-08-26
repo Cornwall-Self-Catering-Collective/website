@@ -1,23 +1,49 @@
 ---
 title: Building a resilient year-round sector
 category: Visitor economy
-excerpt: Exploring the role of self-catering accommodation in sustaining skilled
-  jobs, services and thriving communities beyond the summer season.
+excerpt: Discover the role self-catering accommodation plays in supporting a
+  stable visitor economy beyond peak seasons.
 order: 3
 published: true
 ---
-![](/assets/uploads/sunsetcottage.png)
+![](/assets/uploads/istock-1317252770.jpg)
 
-Cornwall is not only a summer destination. Each season offers something different. Very different.
+Cornwall welcomes millions of visitors each year, with its stunning coastline, family attractions and popular destinations, generating up to £2 billion in tourism revenue during the busy summer months. From our mesmerising beaches to charming seaside towns, there's no better place to make the most of the summer sun. As summer draws to a close, visitor numbers drop significantly, particularly during the colder and wetter months. The county goes from hosting millions of tourists to mere hundreds, transforming its popular hotspots into ghost towns. 
 
-Spring brings colour and longer days. Autumn offers quieter coast paths and dramatic landscapes. Winter is made for storm watching, good food and time together.
+Contrary to popular belief, Cornwall has a lot to offer beyond summer. From autumnal coastal walks and storm watching at the height of winter, to surf weekends in spring, you can enjoy its quieter beaches and hotspots at your own pace. 
 
-Encouraging visits during these shoulder months creates a stronger self-catering sector. It gives accommodation providers a more reliable flow of bookings. It also helps local businesses retain skilled teams throughout the year.
+## **Why year-round visits matter**
 
-The benefits spread far beyond the property itself. Every guest may visit cafés, restaurants, shops, gardens and attractions. They book activities. They use local trades and services. More visits outside summer mean more consistent income across Cornwall’s communities.
+![](/assets/uploads/istock-2192026971.jpg)
 
-We can help guests reconsider when they travel. Flexible short breaks are one option. Seasonal itineraries can showcase experiences that feel special at quieter times. Packages with local attractions, restaurants or activity providers add further value.
+In line with Cornwall's ambition to become a leader in regenerative and responsible tourism by 2030, promoting visits outside of peak seasons is crucial. This can help build a more resilient visitor economy, generating more stable income for you and local communities throughout the year. 
 
-Clear communication matters too. Guests need to see that Cornwall remains vibrant outside the school holidays. They should know what is open, what they can experience and why a quieter visit may be even more rewarding.
+Encouraging a streaky flow of year-round visitors from beyond the Tamar directly benefits the Cornish people. Rather than closing during the winter months, seasonal businesses can stay open all year-round, creating stable jobs for local communities, and allowing residents to enjoy a vibrant atmosphere throughout the colder months. A steady visitor economy across all four seasons will relieve the strain on our infrastructure over the summer, reducing overcrowding on the roads and in popular towns.  
 
-A resilient visitor economy works across all four seasons. By widening Cornwall’s appeal beyond peak summer, we can support better jobs, stronger businesses and thriving communities throughout the year.
+## **Ways to encourage off-season visits**
+
+By promoting the wonders of our county beyond the summer months, you can help create a better, more stable future for Cornwall. 
+
+### **Collaboration with local businesses** 
+
+![](/assets/uploads/istock-2080688234.jpg)
+
+Teaming up with local restaurants, cosy pubs, or family attractions to offer discounts or package deals outside peak months can greatly encourage return visits. Not only does the visitor spending stay within Cornwall's economy, but this authentic Cornish experience could persuade tourists who usually visit in the summer to return beyond peak season, spreading visitor numbers more evenly throughout the year.
+
+### **Provide local guides for visiting off season** 
+
+![](/assets/uploads/istock-533668661.jpg)
+
+Creating local guides about visiting beyond summer for existing guests can encourage return bookings. Not only does this generate a more stable income for you as an accommodation provider, but it enables people to appreciate the beauty of Cornwall in seasons that do not often get recognised. With better promotion of Cornish events throughout the year, such as the Global Pasty Championships in February, the Porthleven Food Festival in April, and the festive Mousehold lights in November, tourists will be encouraged to experience authentic local events they may have otherwise been unaware of. 
+
+### **Friendly greetings and conversation** 
+
+![](/assets/uploads/istock-2218758177.jpg)
+
+Market the experience each season offers through friendly conversations with guests. Personalising guests' experiences is what makes their visit valuable, encouraging return visits year upon year. By providing them with local insight and access to resources they may not have otherwise discovered, you ensure tourists can explore Cornwall at their own pace in the crisp autumn air, from a vibrant, cosy local pub in winter months, or on cycling adventures watching the flowers bloom in spring. Simply projecting your love for Cornwall in every season, and sharing local tips, can be enough to encourage off-season visits. 
+
+### **Promote workcations** 
+
+![](/assets/uploads/istock-1064264536.jpg)
+
+With millions of hybrid workers throughout the country, promoting workcations in the tranquil Cornish countryside can be a huge opportunity for off-season visits. Advocating ‘Work from Cornwall’ packages and the wellness benefits they bring, from a cold morning swim to an afternoon stroll across Cornwall's numerous idyllic coastal paths, can easily attract professionals looking for a refreshing change of scenery away from the office.
